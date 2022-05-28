@@ -1,18 +1,15 @@
 const addButton = document.querySelector('#add-large');
 const body = document.querySelector('body');
-const overlay = document.createElement('div');
+const modal = document.querySelector('.modal');
 const mainContent = document.querySelector('.main-content');
 
 const collection = [];
-overlay.style.gridArea = '1/1/-1/-1';
-overlay.style.backgroundColor = 'rgba(0,0,0,0.5)';
 
 addButton.addEventListener('click', (e) => {
     // Can only click once 
-    addButton.disabled = 'true';
-    // Create form pop-up element w/ low opacity overlay
-    body.appendChild(overlay);
-    // Form element has 4 inputs
+    e.target.disabled = 'true';
+    console.log('click');
+    modal.classList.add('show-modal');
 
 })
 

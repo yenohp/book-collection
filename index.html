@@ -1,36 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <script src="./script.js" defer></script>
-    <title>TOP | Project: Library</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <script src="./script.js" defer></script>
+        <title>TOP | Project: Library</title>
+    </head>
 
-<body>
-    <!-- Header -->
-    <div class="header">
-        <div class="logo">
-            <span>library</span>
+    <body>
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">
+                <span>library</span>
+            </div>
         </div>
-    </div>
-    <!-- Main content -->
-    <div class="main-content">
-        <button id="add-large">+ Add book</button>
-    </div>
+        <!-- Main content -->
+        <div class="main-content">
+            <button id="add-large">+ Add book</button>
+            <div class="modal">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <form action="">
+                        <label for="">Title</label>
+                        <input type="text">
+                        <label for="">Author</label>
+                        <input type="text">
+                        <label for="">Pages</label>
+                        <input type="number">
+                        <label for="">Have read</label>
+                        <input type="checkbox">
+                    </form>
+                </div>
+            </div>
+        </div>
 
-    <!-- 1/6 R/C -->
-    <div class="shelf"></div>
-    <!-- If filled, add another -->
-    <footer></footer>
-</body>
+        <!-- 1/6 R/C -->
+        <div class="shelf"></div>
+        <!-- If filled, add another -->
+        <footer></footer>
+    </body>
 
 </html>

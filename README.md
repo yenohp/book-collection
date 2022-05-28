@@ -8,3 +8,6 @@
 3. Display the array of books
     - A button that toggles if read
     - A button that deletes the book from the collection
+
+
+Learned what a modal is: https://sabe.io/tutorials/how-to-create-modal-popup-box
