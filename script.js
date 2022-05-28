@@ -31,7 +31,7 @@ function Book(title, author, pages, read) {
     this.author = author;
     this.pages = pages;
     this.read = read;
-    const info = `${title} by ${author}, ${pages}, ${read ? 'has read' : 'has not read'}`;
+    this.info = `${title} by ${author}, ${pages}, ${read ? 'has read' : 'has not read'}`;
 }
 
 Book.prototype.showInfo = function () {
@@ -50,6 +50,9 @@ function addBook(title, author, pages, read) {
 }
 
 function removeBook() {
+    if (collection.length == 1) {
+        collection.pop();
+    }
     // if the delete button is pressed
     // remove the book from the array && the display
     // move every book over to the left?
@@ -65,6 +68,14 @@ function clearForm() {
     for (let input of inputs) {
         if (input.type == 'text' || input.type == 'number') input.value = '';
         else input.checked = false;
+    }
+}
+
+function showBooks(arr) {
+    for (let book of arr) {
+        console.log('--------------------');
+        book.showInfo();
+        console.log('--------------------');
     }
 }
 // Maths for calculating position
