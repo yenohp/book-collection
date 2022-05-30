@@ -5,8 +5,11 @@ const mainContent = document.querySelector('.main-content');
 const closeButton = document.querySelector('.close-button');
 const inputs = Array.from(document.querySelectorAll('input'));
 const form = document.querySelector('form');
-
+const bookCard = document.createElement('div');
 const collection = [];
+
+
+bookCard.classList.add('book-card');
 
 addButton.addEventListener('click', (e) => {
     modal.classList.add('show-modal');
@@ -25,6 +28,7 @@ form.addEventListener('submit', (e) => {
     addBook(title, author, pages, read);
     modal.classList.remove('show-modal');
     clearForm();
+    mainContent.appendChild(bookCard);
 })
 function Book(title, author, pages, read) {
     this.title = title;
