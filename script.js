@@ -3,13 +3,11 @@ const body = document.querySelector('body');
 const modal = document.querySelector('.modal');
 const mainContent = document.querySelector('.main-content');
 const closeButton = document.querySelector('.close-button');
-const inputs = Array.from(document.querySelectorAll('input'));
 const form = document.querySelector('form');
-const bookCard = document.createElement('div');
+const shelf = document.querySelector('.shelf');
+const inputs = Array.from(document.querySelectorAll('input'));
 const collection = [];
 
-
-bookCard.classList.add('book-card');
 
 addButton.addEventListener('click', (e) => {
     modal.classList.add('show-modal');
@@ -28,7 +26,6 @@ form.addEventListener('submit', (e) => {
     addBook(title, author, pages, read);
     modal.classList.remove('show-modal');
     clearForm();
-    mainContent.appendChild(bookCard);
 })
 function Book(title, author, pages, read) {
     this.title = title;
@@ -50,6 +47,7 @@ function addBook(title, author, pages, read) {
     const book = new Book(title, author, pages, read);
     // Check if duplicate
     // if(!checkForDuplicate(book));
+    createBookElement(book);
     collection.push(book);
 }
 
@@ -62,12 +60,6 @@ function removeBook() {
     // move every book over to the left?
 }
 
-function displayCollection() {
-    for (let book of collection) {
-        book.showInfo();
-    }
-}
-
 function clearForm() {
     for (let input of inputs) {
         if (input.type == 'text' || input.type == 'number') input.value = '';
@@ -75,6 +67,29 @@ function clearForm() {
     }
 }
 
+function createBookElement(book) {
+    const bookCard = document.createElement('div');
+    bookCard.classList.add('book-card');
+    const { title, author, pages, read } = book;
+
+    const titleP = document.createElement('p');
+    titleP.innerText = title;
+    const authorP = document.createElement('p');
+    authorP.innerText = author;
+    const pagesP = document.createElement('p');
+    pagesP.innerText = pages;
+
+    const readButton = document.createElement('button');
+    if (read) readButton.classList.add('has-read');
+    else readButton.classList.add('hasnt-read');
+
+    bookCard.appendChild(titleP);
+    bookCard.appendChild(authorP);
+    bookCard.appendChild(pagesP);
+    bookCard.appendChild(readButton);
+    shelf.appendChild(bookCard);
+}
+// Debug function
 function showBooks(arr) {
     for (let book of arr) {
         console.log('--------------------');
