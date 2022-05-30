@@ -266,8 +266,10 @@ form>label {
     grid-template: repeat(4, 1fr)/1fr;
 }
 
+.book-card>button {}
+
 .has-read {
-    background-color: green;
+    background-color: rgb(57, 152, 57);
 }
 
 .hasnt-read {

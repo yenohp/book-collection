@@ -38,11 +38,11 @@ function Book(title, author, pages, read) {
 Book.prototype.showInfo = function () {
     console.log(this.info);
 }
-Book.prototype.toggleRead = function () {
-    if (this.read == true) this.read = false;
-    else this.read = true;
+// Book.prototype.toggleRead = function () {
+//     if (this.read) this.read = false;
+//     else this.read = true;
 
-}
+// }
 function addBook(title, author, pages, read) {
     const book = new Book(title, author, pages, read);
     // Check if duplicate
@@ -82,6 +82,20 @@ function createBookElement(book) {
     const readButton = document.createElement('button');
     if (read) readButton.classList.add('has-read');
     else readButton.classList.add('hasnt-read');
+
+    readButton.addEventListener('click', (e) => {
+        if (read) {
+            e.target.classList.remove('hasnt-read');
+            e.target.classList.add('has-read');
+            !read;
+        } else {
+            e.target.classList.remove('has-read');
+            e.target.classList.add('hasnt-read');
+            !read;
+        }
+
+        console.log('click');
+    })
 
     bookCard.appendChild(titleP);
     bookCard.appendChild(authorP);
