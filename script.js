@@ -71,7 +71,6 @@ function createBookElement(book) {
     const bookCard = document.createElement('div');
     bookCard.classList.add('book-card');
     const { title, author, pages, read } = book;
-
     const titleP = document.createElement('p');
     titleP.innerText = title;
     const authorP = document.createElement('p');
@@ -84,17 +83,9 @@ function createBookElement(book) {
     else readButton.classList.add('hasnt-read');
 
     readButton.addEventListener('click', (e) => {
-        if (read) {
-            e.target.classList.remove('hasnt-read');
-            e.target.classList.add('has-read');
-            !read;
-        } else {
-            e.target.classList.remove('has-read');
-            e.target.classList.add('hasnt-read');
-            !read;
-        }
-
         console.log('click');
+        console.dir(book);
+        toggleRead(book, readButton);
     })
 
     bookCard.appendChild(titleP);
@@ -102,6 +93,18 @@ function createBookElement(book) {
     bookCard.appendChild(pagesP);
     bookCard.appendChild(readButton);
     shelf.appendChild(bookCard);
+}
+
+function toggleRead(book, readButton) {
+    book.read = !book.read;
+    if (book.read) {
+        readButton.classList.remove('hasnt-read');
+        readButton.classList.add('has-read');
+    }
+    else {
+        readButton.classList.remove('has-read');
+        readButton.classList.add('hasnt-read');
+    }
 }
 // Debug function
 function showBooks(arr) {
@@ -111,6 +114,7 @@ function showBooks(arr) {
         console.log('--------------------');
     }
 }
+
 // Maths for calculating position
 // Row = if(arr.length > 6) { compare to multiples of 6}
 // Column = 
