@@ -250,7 +250,7 @@ form>label {
 }
 
 .shelf {
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; */
     grid-area: 2/2/3/7;
 
     display: grid;
@@ -264,16 +264,27 @@ form>label {
     background-color: white;
     display: grid;
     grid-template: repeat(4, 1fr)/1fr;
+    border-radius: 1rem;
 }
 
-.book-card>button {}
+.book-card>button {
+    width: 75%;
+    height: 50%;
+    border-radius: 1rem;
+    border: none;
+    justify-self: center;
+}
+
+.book-card>p {
+    justify-self: center;
+}
 
 .has-read {
-    background-color: rgb(57, 152, 57);
+    background-color: #9fff9c;
 }
 
 .hasnt-read {
-    background-color: red;
+    background-color: #ff9c9c;
 }
 
 footer {
