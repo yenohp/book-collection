@@ -1,59 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
-            rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
-        <script src="./script.js" defer></script>
-        <title>TOP | Project: Library</title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="./script.js" defer></script>
+    <title>TOP | Project: Library</title>
+</head>
 
-    <body>
-        <!-- Header -->
-        <div class="header">
-            <div class="logo">
-                <span>library</span>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="logo">
+            <span>library</span>
+        </div>
+    </div>
+    <!-- Main content -->
+    <div class="main-content">
+        <button id="add-large">+ Add book</button>
+        <div class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <form id="form">
+                    <label for="title">Title</label>
+                    <input type="text" id="title">
+                    <label for="author">Author</label>
+                    <input type="text" id="author">
+                    <label for="pages">Pages</label>
+                    <input type="number" id="pages">
+                    <label for="read">Have read</label>
+                    <input type="checkbox" id="read">
+                    <input type="submit">
+                </form>
             </div>
         </div>
-        <!-- Main content -->
-        <div class="main-content">
-            <button id="add-large">+ Add book</button>
-            <div class="modal">
-                <div class="modal-content">
-                    <span class="close-button">&times;</span>
-                    <form id="form">
-                        <label for="title">Title</label>
-                        <input type="text" id="title">
-                        <label for="author">Author</label>
-                        <input type="text" id="author">
-                        <label for="pages">Pages</label>
-                        <input type="number" id="pages">
-                        <label for="read">Have read</label>
-                        <input type="checkbox" id="read">
-                        <input type="submit">
-                    </form>
-                </div>
-            </div>
+        <div class="shelf">
 
-            <!-- 1/6 R/C -->
-            <div class="shelf">
-                <!-- <div class="book-card">
-                    <div class="book-content">
-
-                    </div>
-                </div> -->
-            </div>
         </div>
-
-        <!-- If filled, add another -->
-        <footer></footer>
-    </body>
+    </div>
+    <footer></footer>
+</body>
 
 </html>

@@ -6,6 +6,7 @@ const closeButton = document.querySelector('.close-button');
 const form = document.querySelector('form');
 const shelf = document.querySelector('.shelf');
 const inputs = Array.from(document.querySelectorAll('input'));
+const deleteButton = document.createElement('button');
 const collection = [];
 
 
@@ -77,6 +78,7 @@ function createBookElement(book) {
     authorP.innerText = author.split(' ').map((x) => x.charAt(0).toUpperCase().concat(x.substring(1, x.length))).join(' ');
     const pagesP = document.createElement('p');
     pagesP.innerText = pages;
+    deleteButton.innerText = 'Delete';
 
     const readButton = document.createElement('button');
     if (read) {
@@ -96,8 +98,13 @@ function createBookElement(book) {
     bookCard.appendChild(authorP);
     bookCard.appendChild(pagesP);
     bookCard.appendChild(readButton);
+    bookCard.appendChild(deleteButton);
     shelf.appendChild(bookCard);
 }
+
+deleteButton.addEventListener('click', (e) => {
+    e.target.parentElement.parentElement.removeChild(e.target.parentElement);
+})
 
 function toggleRead(book, readButton) {
     book.read = !book.read;
@@ -112,6 +119,7 @@ function toggleRead(book, readButton) {
         readButton.innerText = 'Hasnt Read';
     }
 }
+
 // Debug function
 function showBooks(arr) {
     for (let book of arr) {
