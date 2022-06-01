@@ -265,6 +265,7 @@ form>label {
     display: grid;
     grid-template: repeat(4, 1fr)/1fr;
     border-radius: 1rem;
+    font-size: 2rem;
 }
 
 .book-card>button {
@@ -273,10 +274,12 @@ form>label {
     border-radius: 1rem;
     border: none;
     justify-self: center;
+    font-size: 2rem;
 }
 
 .book-card>p {
     justify-self: center;
+    align-self: center;
 }
 
 .has-read {

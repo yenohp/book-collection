@@ -72,19 +72,23 @@ function createBookElement(book) {
     bookCard.classList.add('book-card');
     const { title, author, pages, read } = book;
     const titleP = document.createElement('p');
-    titleP.innerText = title;
+    titleP.innerText = `'${title}'`;
     const authorP = document.createElement('p');
-    authorP.innerText = author;
+    authorP.innerText = author.split(' ').map((x) => x.charAt(0).toUpperCase().concat(x.substring(1, x.length))).join(' ');
     const pagesP = document.createElement('p');
     pagesP.innerText = pages;
 
     const readButton = document.createElement('button');
-    if (read) readButton.classList.add('has-read');
-    else readButton.classList.add('hasnt-read');
+    if (read) {
+        readButton.classList.add('has-read');
+        readButton.innerText = 'Read';
+    }
+    else {
+        readButton.classList.add('hasnt-read');
+        readButton.innerText = 'Hasnt Read';
+    }
 
     readButton.addEventListener('click', (e) => {
-        console.log('click');
-        console.dir(book);
         toggleRead(book, readButton);
     })
 
@@ -100,10 +104,12 @@ function toggleRead(book, readButton) {
     if (book.read) {
         readButton.classList.remove('hasnt-read');
         readButton.classList.add('has-read');
+        readButton.innerText = 'Read';
     }
     else {
         readButton.classList.remove('has-read');
         readButton.classList.add('hasnt-read');
+        readButton.innerText = 'Hasnt Read';
     }
 }
 // Debug function
